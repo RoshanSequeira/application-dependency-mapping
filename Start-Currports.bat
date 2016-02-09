@@ -3,10 +3,12 @@
 taskkill /f /im cports.exe
 
 :: delete yesterdays cports log
-del /Q "C:\Support\Programs\CurrPorts\cports-yesterday.log"
-
-:: renames todays log file to yesterday
-ren "C:\Support\Programs\CurrPorts\cports.log" "C:\Support\Programs\CurrPorts\cports-yesterday.log
+ +del "C:\Support\Programs\CurrPorts\3DaysAgo-cports.log"
+  
+:: renames cports log files
+ +ren "C:\Support\Programs\CurrPorts\2DaysAgo-cports.log" 3DaysAgo-cports.log
+ +ren "C:\Support\Programs\CurrPorts\1DayAgo-cports.log" 2DaysAgo-cports.log
+ +ren "C:\Support\Programs\CurrPorts\cports.log" 1DayAgo-cports.log
 
 :: starts CurrPorts with a customized config file
 start "" C:\Support\Programs\CurrPorts\cports.exe /cfg C:\Support\Programs\CurrPorts\customised.cfg /StartAsHidden 1
